@@ -1,0 +1,35 @@
+<strong class="chapoxst"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$xoops_pagetitle}></a></strong>
+<div style="padding: 5px;">
+
+<div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/edit_outline.php"><{$smarty.const._BACK}></a></div>
+
+<fieldset>
+<legend><{$smarty.const.CHAPOX_RENUMBER}></legend>
+<table>
+<tr>
+<th nowrap="nowrap"><{$smarty.const.CHAPOX_OLD}></th>
+<th nowrap="nowrap">-&gt;</th>
+<th nowrap="nowrap"><{$smarty.const.CHAPOX_NEW}></th>
+<th><{$smarty.const.CHAPOX_TITLE}></th>
+<th><{$smarty.const.CHAPOX_STATUS}></th>
+</tr>
+<{foreach item=content from=$contents}>
+<tr style="background-color:<{if $content.indent == 1}>#d8d8d8<{/if}><{if $content.indent == 2}>#e0e0e0<{/if}><{if $content.indent == 3}>#e8e8e8<{/if}><{if $content.indent == 4}>#f0f0f0<{/if}>; padding:4px;">
+<td style="padding:4px;" nowrap="nowrap"><{$content.p_c_s_s}></td>
+<td style="padding:4px;" nowrap="nowrap">-&gt;</td>
+<td style="padding:4px; color:#ff0000; font-weight:bold;" nowrap="nowrap"><{$content.new_p_c_s_s}></td>
+<td style="padding:4px;"><{$content.title}></td>
+<td style="padding:4px;"><{$content.status}> : <{$content.mycontentsize}> bytes</td>
+</tr>
+<{/foreach}>
+
+<tr><th colspan="2"></th><th colspan="3">
+<form action="<{$xoops_url}>/modules/<{$mydirname}>/renumber_outline.php" method="post" style="margin:0;">
+<input type="submit" value="<{$smarty.const._SUBMIT}>" />
+<input type="hidden" name="step" value="<{$step}>" />
+<input type="hidden" name="op" value="renumber_outline_go" />
+<{$ticket_hidden}></form></th></tr>
+</table>
+</fieldset>
+
+</div>

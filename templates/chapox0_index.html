@@ -1,0 +1,34 @@
+<strong class="chapoxst"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$xoops_pagetitle}></a></strong>
+<div style="padding: 5px;">
+
+<{if $editpermission.outline}><div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/edit_outline.php"><{$smarty.const.CHAPOX_EDIT_OUTLINE}></a></div><{else}><br /><{/if}>
+
+<div class="chapoxcontentBlock">
+
+<{foreach item=content from=$outline.contents}>
+<h<{$content.indent}> class="chapoxh<{$content.indent}>"><a href="<{$xoops_url}>/modules/<{$mydirname}>/content.php?lid=<{$content.lid}>" class="chapoxtitle<{$content.indent}>" title="<{$content.excerpt}>&#13;&#10;<{$content.status}> : <{$content.mycontentsize}> bytes - <{if $content.updated_date != ''}>updated <{$content.updated_date}><{else}>posted <{$content.posted_date}><{/if}> by <{$content.uname}>"><{$content.p_c_s_s_f}>&nbsp;:&nbsp;<{$content.title}></a></h<{$content.indent}>>
+<{/foreach}>
+
+</div>
+
+<a href="<{$xoops_url}>/modules/<{$mydirname}>/print.php" target="_blank"><{$smarty.const.CHAPOX_PRINTERFRIENDLY}></a>
+<{if ($editpermission.outline || $editpermission.content)}><div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/stat.php"><{$smarty.const.CHAPOX_SHOW_STATUS}></a></div><{/if}>
+
+<div style="text-align: center; padding: 3px; margin:3px;">
+  <{$commentsnav}>
+  <{$lang_notice}>
+</div>
+
+<div style="margin:3px; padding: 3px;">
+<!-- start comments loop -->
+<{if $comment_mode == "flat"}>
+  <{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+  <{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+  <{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- end comments loop -->
+</div>
+
+</div>

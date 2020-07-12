@@ -1,0 +1,32 @@
+<strong class="chapoxst"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$xoops_pagetitle}></a></strong>
+<div style="padding: 5px;">
+
+<div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$smarty.const._BACK}></a></div>
+
+<fieldset>
+<legend><{$smarty.const.CHAPOX_SHOW_STATUS}></legend>
+<table border="0">
+<tr style="font-size:8pt;">
+<th nowrap="nowrap"><a href="./stat.php">&lt;</a>&nbsp;<{$smarty.const.CHAPOX_OUTLINE}></th>
+<th nowrap="nowrap"><a href="./stat.php?sort=title&amp;order=ASC">&lt;</a>&nbsp;<{$smarty.const.CHAPOX_TITLE}></th>
+<th nowrap="nowrap"><a href="./stat.php?sort=mystatus&amp;order=ASC">&lt;</a>&nbsp;STATUS&nbsp;<a href="./stat.php?sort=mystatus&amp;order=DESC">&gt;</a></th>
+<th nowrap="nowrap">SIZE</th>
+<th nowrap="nowrap"><a href="./stat.php?sort=posted&amp;order=ASC">&lt;</a>&nbsp;POSTED&nbsp;<a href="./stat.php?sort=posted&amp;order=DESC">&gt;</a></th>
+<th nowrap="nowrap"><a href="./stat.php?sort=updated&amp;order=ASC">&lt;</a>&nbsp;UPDATED&nbsp;<a href="./stat.php?sort=updated&amp;order=DESC">&gt;</a></th>
+<th nowrap="nowrap"><a href="./stat.php?sort=uname&amp;order=ASC">&lt;</a>&nbsp;USER&nbsp;<a href="./stat.php?sort=uname&amp;order=DESC">&gt;</a></th>
+</tr>
+<{foreach item=content from=$contents}>
+<tr style="background-color:<{if $content.indent == 1}>#d8d8d8<{/if}><{if $content.indent == 2}>#e0e0e0<{/if}><{if $content.indent == 3}>#e8e8e8<{/if}><{if $content.indent == 4}>#f0f0f0<{/if}>">
+<td nowrap="nowrap">&nbsp;<{$content.p_c_s_s_f}></td>
+<td><{$content.title}></td>
+<td style="font-size:8pt; font-weight:normal;" nowrap="nowrap">&nbsp;<{$content.status}></td>
+<td style="font-size:8pt; font-weight:normal;" nowrap="nowrap" align="right"><{$content.mycontentsize}>&nbsp;</td>
+<td style="font-size:8pt; font-weight:normal;" nowrap="nowrap">&nbsp;<{$content.posted_date}></td>
+<td style="font-size:8pt; font-weight:normal;" nowrap="nowrap">&nbsp;<{$content.updated_date}></td>
+<td style="font-size:8pt; font-weight:normal;" nowrap="nowrap">&nbsp;<{$content.uname}>&nbsp;(<{$content.uid}>)</td>
+</tr>
+<{/foreach}>
+</table>
+
+</fieldset>
+</div>

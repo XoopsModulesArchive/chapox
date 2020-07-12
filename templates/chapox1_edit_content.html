@@ -1,0 +1,35 @@
+<strong class="chapoxst"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$xoops_pagetitle}></a></strong>
+<div style="padding: 5px;">
+
+<div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/content.php?lid=<{$content.lid}>"><{$smarty.const._BACK}></a></div>
+
+<fieldset>
+<legend><{$smarty.const.CHAPOX_EDIT_CONTENT}></legend>
+<table><tr><th colspan="2">
+<form action="<{$xoops_url}>/modules/<{$mydirname}>/update_content.php" method="post" style="margin:0;">
+<input type="hidden" name="op" value="update_content" />
+<input type="hidden" name="lid" value="<{$content.lid}>" />
+<{$ticket_hidden}>
+<{$content.p_c_s_s}> : <{$content.title}>
+</th></tr>
+<tr><td class="head"><{$smarty.const.CHAPOX_EXCERPT}> : </td>
+    <td class="even"><textarea name="excerpt" cols="80" rows="4"><{$content.excerpt}></textarea></td></tr>
+<tr><td class="head"><{$smarty.const.CHAPOX_MYCONTENT}> : </td>
+    <td class="even"><{$content.mycontentform}></td></tr>
+<tr><td class="head"><{$smarty.const.CHAPOX_FOOTNOTE}> : </td>
+    <td class="even"><{$content.footnoteform}></td></tr>
+<tr><td class="head"><{$smarty.const.CHAPOX_STATUS}> : </td>
+    <td class="even"><select name="status">
+<{foreach item=Status from=$StatusList}>
+<option value="<{$Status}>"<{if $Status == $content.status}> selected="selected"<{/if}>><{$Status}></option>
+<{/foreach}>
+</select>
+</td></tr>
+<tr><td class="head"></td>
+    <td class="even"><input type="submit" value="<{$smarty.const._SUBMIT}>" style="float:left; margin:0;" /><input type="reset" value="<{$smarty.const._CANCEL}>" style="float:right; margin:0;" />
+</form>
+</td></tr>
+</table>
+</fieldset>
+
+</div>

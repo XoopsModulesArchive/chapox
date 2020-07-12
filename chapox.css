@@ -1,0 +1,79 @@
+strong.chapoxst {
+	margin-top:4px;
+	margin-bottom:12px;
+	font-size:12pt;
+}
+
+h1.chapoxh1 {
+	font-family:monospace;
+	margin-left:0;
+	margin-top:8px;
+	margin-bottom:4px;
+	font-size:12pt;
+	font-weight:bold;
+	padding:4px 0 4px 10px;
+	background-color:#f0f0f0;
+	border-bottom:solid 2px #666666;
+}
+h2.chapoxh2 {
+	font-family:monospace;
+	margin-left:10px;
+	margin-top:4px;
+	margin-bottom:2px;
+	font-size:12pt;
+	font-weight:bold;
+	padding:3px 0 3px 10px;
+	background-color:#f6f6f6;
+	border-bottom:solid 1px #666666;
+}
+h3.chapoxh3 {
+	font-family:monospace;
+	margin-left:20px;
+	margin-top:2px;
+	margin-bottom:2px;
+	font-size:10pt;
+	font-weight:normal;
+	padding:2px 0 2px 10px;
+	background-color:#f9f9f9;
+	border-bottom:dashed 2px #666666;
+}
+h4.chapoxh4 {
+	font-family:monospace;
+	margin-left:30px;
+	margin-top:2px;
+	margin-bottom:2px;
+	font-size:10pt;
+	font-weight:normal;
+	background-color:#fcfcfc;
+	border-bottom:dashed 1px #666666;
+	padding:1px 0 1px 10px;
+}
+
+.chapoxstatus {
+	color:#0000ff;
+}
+
+.chapoxcontentBlock {
+	border:double 3px #a0a0ff;
+	padding:8px;
+	margin-bottom:12px;
+}
+
+.chapoxexcerpt {
+	margin:4px 40px 20px 100px;
+	border:dotted 1px #cccccc;
+	padding:12px;
+	font-size:smaller;
+	font-style:italic;
+}
+.chapoxmycontent {
+	margin-left:60px;
+	padding:4px;
+}
+.chapoxfootnote {
+	margin:12px 40px 20px 100px;
+	border-top:dotted 1px #cccccc;
+	padding:4px;
+	font-size:smaller;
+	font-style:italic;
+}

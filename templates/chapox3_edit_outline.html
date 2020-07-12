@@ -1,0 +1,49 @@
+<strong class="chapoxst"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$xoops_pagetitle}></a></strong>
+<div style="padding: 5px;">
+
+<div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$smarty.const._BACK}></a></div>
+
+<fieldset>
+<legend><{$smarty.const.CHAPOX_EDIT_OUTLINE}></legend>
+<table border="0">
+<tr><th align="center"><form action="<{$xoops_url}>/modules/<{$mydirname}>/update_outline.php" method="post" style="margin:0;"><input type="submit" value="<{$smarty.const._SUBMIT}>" /></th><th colspan="3" align="right"><input type="hidden" name="op" value="update_outline" /><{$ticket_hidden}><input type="reset" value="<{$smarty.const._CANCEL}>" /></th></tr>
+<tr>
+<th><{$smarty.const.CHAPOX_OUTLINE}></th>
+<th><{$smarty.const.CHAPOX_TITLE}></th><th><{$smarty.const.CHAPOX_STATUS}></th><th><{$smarty.const._DELETE}></th>
+</tr>
+<{foreach item=content from=$contents}>
+<tr style="background-color:<{if $content.indent == 1}>#d8d8d8<{/if}><{if $content.indent == 2}>#e0e0e0<{/if}><{if $content.indent == 3}>#e8e8e8<{/if}><{if $content.indent == 4}>#f0f0f0<{/if}>">
+<td><input type="text" size="16" name="layers<{$content.myid}>" value="<{$content.p_c_s_s}>" /></td>
+<td><input type="text" size="72" name="title<{$content.myid}>" maxlength="250" value="<{$content.title}>" />
+<input type="hidden" name="lid<{$content.myid}>" value="<{$content.lid}>" /></td>
+<td style="font-size:8pt; font-weight:normal;"><{$content.status}> : <{$content.mycontentsize}> bytes</td>
+<td><{if $content.status != $smarty.const.CHAPOX_FREEZE_STATUS}><input type="checkbox" name="delete<{$content.myid}>" value="<{$content.myid}>" /><{/if}></td>
+</tr>
+<{/foreach}>
+<{section name="newtitles" loop=10}>
+<tr>
+<td><input type="text" size="16" name="layers<{$smarty.section.newtitles.iteration}>" value="" /></td>
+<td><input type="text" size="72" name="title<{$smarty.section.newtitles.iteration}>" maxlength="250" value="" />
+<input type="hidden" name="lid<{$smarty.section.newtitles.iteration}>" value="0" />
+<input type="hidden" name="delete<{$smarty.section.newtitles.iteration}>" value="0" /></td>
+<td></td><td></td><td></td>
+</tr>
+<{/section}>
+<tr><th align="center"><input type="submit" value="<{$smarty.const._SUBMIT}>" /></th><th colspan="3" align="right"><input type="hidden" name="op" value="update_outline" /><{$ticket_hidden}><input type="reset" value="<{$smarty.const._CANCEL}>" /></form></th></tr>
+</table>
+
+</fieldset>
+<br />
+
+<fieldset>
+<legend><{$smarty.const.CHAPOX_RENUMBER}></legend>
+<form action="<{$xoops_url}>/modules/<{$mydirname}>/renumber_outline.php" method="post" style="margin:0;">
+<{$smarty.const.CHAPOX_RENUMBER_STEP}> :
+<input type="radio" name="step" value="1" checked="checked" />1
+<input type="radio" name="step" value="10" />10&nbsp;
+<input type="hidden" name="op" value="renumber_outline" />
+<input type="submit" value="<{$smarty.const._PREVIEW}>" />
+</form>
+</fieldset>
+
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$smarty.const._CHARSET}>" />
+<meta http-equiv="content-language" content="ja" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta name="robots" content="index, nofollow" />
+<link rel="stylesheet" type="text/css" media="screen,print" href="<{$smarty.const.XOOPS_URL}>/modules/<{$mydirname}>/chapox.css" />
+<meta name="generator" content="CHAPOX" />
+<title><{$xoops_sitename}> --- <{$xoops_slogan}> --- <{$xoops_pagetitle}></title>
+</head>
+<body>
+
+<{foreach item=content from=$outline.contents}>
+<h<{$content.indent}> class="chapoxh<{$content.indent}>"><{$content.p_c_s_s_f}>&nbsp;:&nbsp;<{$content.title}></h<{$content.indent}>>
+<{if $content.excerpt != ''}><p class="chapoxexcerpt"><{$content.excerpt}></p><{/if}>
+<{if $content.mycontent != ''}><p class="chapoxmycontent"><{$content.mycontent}></p><{/if}>
+<{if $content.footnote != ''}><p class="chapoxfootnote"><{$content.footnote}></p><{/if}>
+<{/foreach}>
+
+<div>
+<table style="font-size:small; float:right; border:solid 1px #000000; margin-top:100px;">
+<{foreach item=content from=$outline.contents}>
+<tr>
+<td nowrap="nowrap"><{$content.p_c_s_s_f}></td>
+<td><{$content.title}></td>
+<td nowrap="nowrap"><{$content.status}><td>
+<td align="right" nowrap="nowrap"><{$content.mycontentsize}> bytes</td>
+<td nowrap="nowrap"><{if $content.updated_date != ''}><{$content.updated_date}><{else}><{$content.posted_date}><{/if}></td>
+<td nowrap="nowrap">by <{$content.uname}></td>
+</tr>
+<{/foreach}>
+</table>
+</div>
+
+</body>
+</html>

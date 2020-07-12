@@ -1,0 +1,29 @@
+<strong class="chapoxst"><a href="<{$xoops_url}>/modules/<{$mydirname}>/"><{$xoops_pagetitle}></a></strong>&nbsp;<{$br_list}>&nbsp;&gt;&nbsp;<{$content.title}>
+<div style="padding: 5px;">
+
+<{if $myeditpermission}><div align="right"><a href="<{$xoops_url}>/modules/<{$mydirname}>/edit_content.php?lid=<{$content.lid}>"><{$smarty.const.CHAPOX_EDIT_CONTENT}></a></div><{else}><br /><{/if}>
+
+<div class="chapoxcontentBlock">
+<h<{$content.indent}> class="chapoxh<{$content.indent}>"><{$content.p_c_s_s_f}>&nbsp;:&nbsp;<{$content.title}></h<{$content.indent}>>
+<{if $content.excerpt != ''}><p class="chapoxexcerpt"><{$content.excerpt}></p><{/if}>
+<{if $content.mycontent != ''}><p class="chapoxmycontent"><{$content.mycontent}></p><{/if}>
+<{if $content.footnote != ''}><p class="chapoxfootnote"><{$content.footnote}></p><{/if}>
+</div>
+
+<div align="center" style="float:center; margin-bottom:16px;" class="chapox_status"><{$content.status}> : <{$content.mycontentsize}> bytes - <{if $content.updated_date != ''}>updated <{$content.updated_date}><{else}>posted <{$content.posted_date}><{/if}> by <{$content.uname}></div>
+<div style="float:left;margin-bottom:4px;"><{if $prev.lid != 0}><a href="./content.php?lid=<{$prev.lid}>">&lt;&lt;&nbsp;<{$prev.p_c_s_s}> : <{$prev.title}></a><{/if}></div>
+<div style="float:right;margin-bottom:4px;"><{if $next.lid != 0}><a href="./content.php?lid=<{$next.lid}>"><{$next.title}> : <{$next.p_c_s_s}>&nbsp;&gt;&gt;</a><{/if}></div>
+
+<br clear="all" />
+
+<{if $outline.count > 0}>
+<div style="margin-top:40px;">
+<fieldset><br />
+<{foreach item=content from=$outline.contents}>
+<h<{$content.indent}> class="chapoxh<{$content.indent}>"><a href="<{$xoops_url}>/modules/<{$mydirname}>/content.php?lid=<{$content.lid}>" class="chapoxtitle<{$content.indent}>" title="<{$content.status}> : <{$content.mycontentsize}> bytes - updated <{$content.updated_date}> by <{$content.uname}>"><{$content.p_c_s_s_f}>&nbsp;:&nbsp;<{$content.title}></a></h<{$content.indent}>>
+<{/foreach}>
+<br /></fieldset>
+</div>
+<{/if}>
+
+</div>

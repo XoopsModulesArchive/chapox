@@ -1,0 +1,8 @@
+<table border="0">
+<{foreach item=content from=$block.outline}>
+<tr class="<{cycle values="even,odd"}>">
+<td nowrap="nowrap"><{$content.p_c_s_s_f}></td>
+<td><a href="<{$xoops_url}>/modules/<{$block.mydirname}>/content.php?lid=<{$content.lid}>" title="updated <{$content.updated_date}> by <{$content.uname}>"><{$content.title}></a></td>
+</tr>
+<{/foreach}>
+</table>
